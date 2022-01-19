@@ -1,0 +1,399 @@
+body {
+  font-family: "Cairo", sans-serif;
+  /* height: 10000px; */
+  overflow-x: hidden;
+}
+
+body.active {
+  background-color: #00000047;
+}
+
+/* main roulrs  */
+
+.container {
+  /* margin: auto 20px; */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+
+i {
+    cursor: pointer;
+}
+/* End main rols  */
+
+/* start header  */
+.top-besis {
+  margin-bottom: 138px;
+  z-index: 1111;
+}
+header {
+  background-color: white;
+  z-index: 1111;
+  width: 92%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 0.5rem;
+  /* border-bottom: 1px solid red; */
+  padding-bottom: 1rem;
+  /* position: relative; */
+  /* height: 138px; */
+}
+
+
+
+header .container nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+margin-bottom: 1rem;
+}
+header .container nav .left {
+  width: 45%;
+  display: flex;
+  align-items: center;
+}
+header .container nav .left span {
+  margin-right: 1em;
+}
+
+header .container nav .left .name {
+  background-color: aqua;
+  border-radius: 50%;
+  display: flex;
+   cursor: pointer;
+   width: 30px;
+   height: 30px;
+   align-items: center;
+   justify-content: center;
+
+   
+}
+
+header .container nav .middle {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+
+header .container nav .middle span:not(.kapoyr, .icon-search) {
+  padding-right: 1em;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+header .container nav .middle .icon-search {
+  width: 3rem;
+  background-color: #cfcfcf;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+  border: 1px solid red;
+  transition-duration: 0.3s;
+  margin-right: -1rem;
+}
+
+header .container nav .middle .icon-search:hover {
+  background-color: red;
+}
+header .container nav .middle .kapoyrd {
+  position: relative;
+  left: 2rem;
+  z-index: 1;
+}
+
+header .container nav .middle div {
+  width: 80%;
+}
+header .container nav .middle input {
+  border: 1px solid black;
+  position: relative;
+  width: 90%;
+  padding: 0.5rem 0px;
+}
+
+header .container nav .middle input.active {
+  width: 55%;
+}
+
+@media (max-width: 650px) {
+  header .container nav .middle input,
+  header .container nav .middle .fa-keyboard {
+    display: none;
+  }
+
+  header .container nav .middle .icon-search {
+    color: black;
+    background-color: transparent;
+    border: none;
+  }
+
+  header .container nav .middle .icon-search:hover {
+    background-color: transparent;
+  }
+
+  header .container nav .left {
+    width: 90%;
+  }
+
+  header .container nav {
+    justify-content: inherit;
+  }
+}
+
+header .container nav .middle input:focus {
+  border-color: red;
+  outline: none;
+}
+
+
+
+header .container nav .middle input::placeholder {
+  text-align: end;
+}
+header .container nav .middle .fa-search {
+}
+header .container nav .middle .fa-keyboard {
+  position: absolute;
+}
+
+header .container nav .right {
+  display: flex;
+  font-size: large;
+  font-weight: bold;
+  align-items: center;
+}
+
+header .container nav .right.active {
+  display: none;
+}
+header .container nav .right i {
+  color: red;
+}
+header .container nav .right i.fa-align-justify {
+  margin-left:1rem;
+  color: gray;
+  display: none;
+}
+header .container nav .right .brend {
+  display: flex;
+  line-height: 0 ;
+  
+}
+
+.pigention {
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* padding-left: 1rem; */
+  /* padding-right: 1rem; */
+  width: 7%;
+  
+}
+
+.pigention.hidden {
+  display: none;
+}
+
+@media (max-width : 805px) {
+    .pigention {
+        display: none;
+    }
+    header  {
+        width: 100%;
+        padding-right: 1rem;
+    }
+
+  
+
+   .right .item {
+       display: flex;
+   } 
+   header .container nav .right i.fa-align-justify {
+       display: flex;
+   }
+}
+.pigention .item-div{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ margin-bottom: 1.5rem;
+
+}
+
+
+
+/* جزء الازرار  */
+
+header .btns {
+  position: relative;
+  padding: 0.5rem;
+}
+header .btns::after {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  background-color: red;
+  content: "";
+}
+header .btns::before {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  top: 0;
+  background-color: red;
+  content: "";
+}
+
+header .btns {
+  /* text-align: end; */
+  overflow: hidden;
+  display: flex;
+  justify-content: end;
+
+}
+
+header .btns button {
+  padding: 0.5rem 1rem;
+  /* width: 9rem; */
+  /* height: 2.5rem; */
+  border-radius: 20px;
+  border: 1px solid red;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+header .btns button.active {
+  background-color: rgb(3 3 3 /62%);
+  color: rgb(255 255 255);
+}
+
+header .btns button:hover:not(.active) {
+  background-color: rgb(0 0 0 / 10%);
+}
+
+/* جزء الازرار  */
+
+/* قائمة الفيديوهات  */
+.videos {
+  width: 92%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+  gap: 20px;
+  z-index: -1;
+}
+
+.videos .top {
+  position: relative;
+}
+
+.videos .top span {
+  position: absolute;
+    bottom: 10px;
+    background-color: black;
+    color: white;
+    padding: 0px 0.4rem;
+    margin-left: 0.5rem;
+    font-size: large;
+}
+
+.videos .card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+ 
+  margin-top: 0.5rem;
+}
+
+.videos img:not(.logo) {
+  width: 100%;
+  height: 100%;
+}
+.videos img.logo {
+width: 30px ;
+height: 30px;
+border-radius: 50% ;
+}
+
+.videos .card-body .left {
+  margin-left: 1rem;
+  visibility: hidden;
+  
+}
+.videos .card-body .middle {
+  display: flex;
+    flex-direction: column;
+    justify-content: end;
+    flex-grow: 1;
+    text-align: end;
+    margin-top: -0.5rem;
+    margin-right: 2rem;
+    font-size: small;
+
+}
+
+.videos .card-body .card-title {
+  font-weight: bold;
+}
+.videos .card-body .right {
+
+}
+
+.videos .card:hover .left {
+ visibility: visible;
+}
+/* قائمة الفيديوهات  */
+/* الديف الى بيظهر ويختفى  */
+.left-heder {
+height: 100vh;
+width: 203px;
+background-color: white;
+position: absolute;
+top: 0;
+right:  0;
+color: black;
+padding: 0.5rem;
+transform: translateX(1500px);
+transition-duration: 0.3s;
+display: none;
+z-index: 111111111111111112;
+}
+
+.left-heder.active {
+  transform: translateX(0px);
+display: inherit;
+}
+
+.left-heder .item-div {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.left-heder .item-div i {
+  margin: 0px 0.4rem;
+}
+
+.left-heder .item-div.brend {
+    font-size: 1.5em;
+}
+.left-heder .item-div .fa-youtube {
+  color: red;
+}
+
+/* نهاية الديف الى بيظهر ويختفى  */
+
+
+/* End header  */
