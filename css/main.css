@@ -372,7 +372,7 @@ display: inherit;
 .left-heder .item-div {
     margin-top: 1rem;
     display: flex;
-    justify-content: end;
+     justify-content: flex-end;
     align-items: center;
     cursor: pointer;
     font-size: 1.3rem;
