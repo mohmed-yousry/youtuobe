@@ -232,8 +232,11 @@ header .container nav .right .brend {
 /* جزء الازرار  */
 
 header .btns {
-  position: relative;
+ position: relative;
   padding: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
 }
 header .btns::after {
   position: absolute;
@@ -254,13 +257,6 @@ header .btns::before {
   content: "";
 }
 
-header .btns {
-  /* text-align: end; */
-  overflow: hidden;
-  display: flex;
-  justify-content: end;
-
-}
 
 header .btns button {
   padding: 0.5rem 1rem;
