@@ -2,12 +2,12 @@ body {
   font-family: "Cairo", sans-serif;
   /* height: 10000px; */
   overflow-x: hidden;
+  /* direction: rtl; */
 }
 
-body.active {
-  background-color: #00000047;
+:root {
+  --main-color : #d3d3d3 ;
 }
-
 /* main roulrs  */
 
 .container {
@@ -37,10 +37,7 @@ header {
   top: 0;
   left: 0;
   padding-top: 0.5rem;
-  /* border-bottom: 1px solid red; */
   padding-bottom: 1rem;
-  /* position: relative; */
-  /* height: 138px; */
 }
 
 
@@ -61,7 +58,7 @@ header .container nav .left span {
 }
 
 header .container nav .left .name {
-  background-color: aqua;
+  background-color: #0098a6;
   border-radius: 50%;
   display: flex;
    cursor: pointer;
@@ -69,8 +66,7 @@ header .container nav .left .name {
    height: 30px;
    align-items: center;
    justify-content: center;
-
-   
+   color: white;
 }
 
 header .container nav .middle {
@@ -88,18 +84,18 @@ header .container nav .middle span:not(.kapoyr, .icon-search) {
 
 header .container nav .middle .icon-search {
   width: 3rem;
-  background-color: #cfcfcf;
+  background-color: #f8f8f8;
   align-items: center;
   justify-content: center;
   display: flex;
-  color: white;
-  border: 1px solid red;
+  /* color: white; */
+  border: 1px solid #d3d3d3ed;
   transition-duration: 0.3s;
   margin-right: -1rem;
 }
 
 header .container nav .middle .icon-search:hover {
-  background-color: red;
+  background-color: #d3d3d3;
 }
 header .container nav .middle .kapoyrd {
   position: relative;
@@ -111,7 +107,7 @@ header .container nav .middle div {
   width: 80%;
 }
 header .container nav .middle input {
-  border: 1px solid black;
+  border: 1px solid #d3d3d3;
   position: relative;
   width: 90%;
   padding: 0.5rem 0px;
@@ -147,7 +143,7 @@ header .container nav .middle input.active {
 }
 
 header .container nav .middle input:focus {
-  border-color: red;
+  border-color: black;
   outline: none;
 }
 
@@ -156,8 +152,7 @@ header .container nav .middle input:focus {
 header .container nav .middle input::placeholder {
   text-align: end;
 }
-header .container nav .middle .fa-search {
-}
+
 header .container nav .middle .fa-keyboard {
   position: absolute;
 }
@@ -190,8 +185,6 @@ header .container nav .right .brend {
   position: fixed;
   top: 0;
   right: 0;
-  /* padding-left: 1rem; */
-  /* padding-right: 1rem; */
   width: 7%;
   
 }
@@ -232,7 +225,7 @@ header .container nav .right .brend {
 /* جزء الازرار  */
 
 header .btns {
- position: relative;
+  position: relative;
   padding: 0.5rem;
   overflow: hidden;
   display: flex;
@@ -244,7 +237,7 @@ header .btns::after {
   height: 1px;
   left: 0;
   bottom: 0;
-  background-color: red;
+  background-color: var(--main-color);
   content: "";
 }
 header .btns::before {
@@ -253,17 +246,16 @@ header .btns::before {
   height: 1px;
   left: 0;
   top: 0;
-  background-color: red;
+  background-color: var(--main-color);
   content: "";
 }
 
 
+
 header .btns button {
   padding: 0.5rem 1rem;
-  /* width: 9rem; */
-  /* height: 2.5rem; */
   border-radius: 20px;
-  border: 1px solid red;
+  border: 1px solid var(--main-color);
   cursor: pointer;
   margin: 0 0.5rem;
 }
@@ -340,9 +332,7 @@ border-radius: 50% ;
 .videos .card-body .card-title {
   font-weight: bold;
 }
-.videos .card-body .right {
 
-}
 
 .videos .card:hover .left {
  visibility: visible;
@@ -372,7 +362,7 @@ display: inherit;
 .left-heder .item-div {
     margin-top: 1rem;
     display: flex;
-     justify-content: flex-end;
+    justify-content: end;
     align-items: center;
     cursor: pointer;
     font-size: 1.3rem;
@@ -388,6 +378,9 @@ display: inherit;
 .left-heder .item-div .fa-youtube {
   color: red;
 }
+
+
+
 
 /* نهاية الديف الى بيظهر ويختفى  */
 
