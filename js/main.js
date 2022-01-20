@@ -15,6 +15,7 @@ function showandhid(item) {
       .querySelector(" header .container nav .middle input ")
       .classList.toggle("active");
     window.scrollTo((x = 0), (y = 0));
+    document.querySelector(".overlay").classList.toggle("active")
   });
 }
 
@@ -33,11 +34,22 @@ inpSer.addEventListener("focus", function () {
 
 inpSer.addEventListener("blur", function () {
   kaboerd.style.display = "inherit";
+  hiddKapoyerd()
 });
 
 // نهاية جزء الفوكس بتاع السيرش
 
 // تظبيط الجزء بتاع الموبايل بتاع السيرش والايقونات بتعته
+
+function hiddKapoyerd () {
+    if(inpSer.value != ``) {
+        kaboerd.style.display = `none`
+    } else {
+        
+        kaboerd.style.display = `inherit`
+    }
+}
+
 
 let angleRight = document.createElement("span");
 angleRight.className = `angle`;
@@ -73,11 +85,13 @@ window.onresize = function () {
       middle.appendChild(angleRight);
       angleRight.style.display = `inherit`;
     });
+
   }
 
   if (body.offsetWidth > 640) {
     navRight.style.display = `inherit`;
     inpSer.style.display = `inherit`;
+    inpSer.style.border = ` #d3d3d3ed`;
     kaboerd.style.display = `inherit`;
     nevLeft.style.display = `inherit`;
     document.querySelector(
@@ -87,6 +101,7 @@ window.onresize = function () {
         background-color: #f8f8f8;
         `;
     angleRight.style.display = `none`;
+    hiddKapoyerd();
   }
 };
 
@@ -101,7 +116,7 @@ angleRight.addEventListener("click", function () {
     border: 1px solid transparent;
     background-color: transparent;
     `;
-
+    hiddKapoyerd()
   this.style.display = `none`;
 });
 
@@ -161,5 +176,9 @@ btnsContent.forEach((e) => {
         x.target.classList.add("active");
       }
     }
-  });
 });
+});
+// ازرار المحتوى
+
+
+
