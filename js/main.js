@@ -65,7 +65,7 @@ let inconSer = document.querySelector(
   "header .container nav .middle .icon-search"
 );
 window.onresize = function () {
-  console.log();
+
 
   if (body.offsetWidth <= 650) {
     inpSer.style.display = `none`;
@@ -133,19 +133,25 @@ let titles = [
   "اسباب انهزام الدولة العثمانية",
 ];
 
-// console.log (tit)
+
+let gend = [
+    "proj" , "sassa" , "gem" , "mov" , "mosls" , "child" , "keds", "sport" , 
+]
+
 
 for (let i = 0; i < 20; i++) {
   let tit = Math.floor(Math.random() * titles.length);
+  let gen = Math.floor(Math.random() * gend.length);
 
   let cart = document.createElement("div");
   cart.className = "card";
+  cart.setAttribute("gend" , `${gend[gen]}`)
   cart.innerHTML = `
-<div class="top">
- <span>1:00:45</span>
- <img src="./img/${i}.webp" alt="elzero">
-</div>
-<div class="card-body">
+  <div class="top">
+  <span>1:00:45</span>
+  <img src="./img/${i}.webp" alt="elzero">
+  </div>
+  <div class="card-body">
     <div class="left">
      <i class="fas fa-ellipsis-v"></i>
     </div>
@@ -165,7 +171,6 @@ for (let i = 0; i < 20; i++) {
 // الانتهاء من اضافة الكطروت
 
 // ازرار المحتوى
-btnSer.classList.contains;
 
 let btnsContent = Array.from(document.querySelectorAll("header .btns button"));
 btnsContent.forEach((e) => {
@@ -175,10 +180,23 @@ btnsContent.forEach((e) => {
         btnsContent[z].classList.remove("active");
         x.target.classList.add("active");
       }
+      let allCards =Array.from( document.querySelectorAll(".videos .card")) ; 
+          allCards.forEach (it=> {
+        if(x.target.getAttribute("act") == it.getAttribute("gend") ) {
+            for(let y = 0 ; y< allCards.length ; y++) {
+                allCards[y].style.display = `none`
+                if(allCards[y].getAttribute("gend") == it.getAttribute("gend") ) {
+                    allCards[y].style.display = `grid`
+                }
+            }
+        } else if (x.target.getAttribute("act") == "all") {
+            for(let y = 0 ; y< allCards.length ; y++) {
+                allCards[y].style.display = `grid`
+            }
+        }
+      })
+
     }
 });
 });
 // ازرار المحتوى
-
-
-
